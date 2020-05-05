@@ -1,5 +1,5 @@
 {
-    "name": "itakademy/lainas-bugsnag",
+    "name": "itakademy/laminas-bugsnag",
     "description": "Bugsnag Notifier for Laminas",
     "license": "MIT",
     "keywords": [
