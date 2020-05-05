@@ -1,7 +1,3 @@
-<a href="https://aimeos.org/">
-    <img src="https://www.it-akademy.fr/img/logo.png" alt="IT-Akademy logo" title="IT-Akademy" align="right" height="60" />
-</a>
-
 # Laminas-Bugsnag
 
 ## [Bugsnag](https://bugsnag.com) Notifier for [Laminas Framework](https://getlaminas.org/)
