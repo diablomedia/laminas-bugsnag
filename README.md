@@ -1,32 +1,40 @@
-## Bugsnag Notifier for Zend Framework 2.3 and 3.0
+<a href="https://aimeos.org/">
+    <img src="https://www.it-akademy.fr/img/logo.png" alt="IT-Akademy logo" title="IT-Akademy" align="right" height="60" />
+</a>
+
+# Laminas-Bugsnag
+
+## [Bugsnag](https://bugsnag.com) Notifier for [Laminas Framework](https://getlaminas.org/)
+
+**This package is a fork of [nickurt/zf-bugsnag](https://github.com/nickurt/zf-bugsnag), which seemed to be inactive for some time. This is a port for [Laminas](https://getlaminas.org/) project. Thank's to [Nickurt](https://github.com/nickurt/) for his job.**
+
 ### Bugsnag?
-The Bugsnag Notifier for Zend Framework 2.3 and 3.0 gives you instant notifications of the errors in your application. You can create a free plan/account on the [bugsnag](https://bugsnag.com) website.
+The [Bugsnag](https://bugsnag.com) Notifier for [Laminas Framework](https://getlaminas.org/) gives you instant notifications of the errors in your application. You can create a free plan/account on the [bugsnag](https://bugsnag.com) website.
+
 ### Install
 #### Installation with the composer
-```sh
-php composer.phar require nickurt/zf-bugsnag:1.*
+
+```shell
+php composer.phar require itakademy/laminas-bugsnag
+```
+
+or with global composer install :
+
+```shell
+composer require itakademy/laminas-bugsnag
 ```
 
 ### Requirements
 
-* PHP5.5+
-* [Zend Framework 2.3](https://github.com/zendframework/zf2) or [Zend Framework 3.0](https://github.com/zendframework/zendframework)
+* PHP7.2+
+* [Laminas](https://getlaminas.org/)
 * [Bugsnag PHP-API](https://github.com/bugsnag/bugsnag-php)
 
 ### Post Installation
 
-Enable it in your `application.config.php` (or `modules.config.php`) file
+Enable it in your  `./config/modules.config.php` file
 ```php
 <?php
-
-// application.config.php
-return array(
-    'modules' => array(
-        'ZfBugsnag', // Must be added as the first module
-        // ...
-    ),
-    // ...
-);
 
 // modules.config.php
 return [
@@ -34,9 +42,9 @@ return [
 
     // ...
 ];
-
-
 ```
+
 ### Configuration
 
-Copy the `config/zfbugsnag.local.php` file to your `config/autoload` folder and change the settings (IsEnabled/ApiKey)
+Copy the `./vendor/itakademy/laminas-bugsnag/config/zfbugsnag.local.php.dist` file to `./config/autoload/zfbugsnag.local.php`  and customize the settings (IsEnabled/ApiKey).
+
