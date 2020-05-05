@@ -3,7 +3,7 @@ namespace LaminasBugsnag\Options;
 
 use Laminas\ServiceManager\FactoryInterface;
 use Laminas\ServiceManager\ServiceLocatorInterface;
-use Psr\Container\ContainerInterface;
+use Interop\Container\ContainerInterface;
 
 class BugsnagOptionsFactory implements FactoryInterface
 {
