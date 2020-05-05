@@ -1,9 +1,9 @@
 <?php
-namespace ZfBugsnag\Options;
+namespace LaminasBugsnag\Options;
 
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use Interop\Container\ContainerInterface;
+use Laminas\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
+use Psr\Container\ContainerInterface;
 
 class BugsnagOptionsFactory implements FactoryInterface
 {
@@ -22,6 +22,6 @@ class BugsnagOptionsFactory implements FactoryInterface
     {
         $config = $container->get('Config');
 
-        return new BugsnagOptions($config['zf-bugsnag']);
+        return new BugsnagOptions($config['laminas-bugsnag']);
     }
 }

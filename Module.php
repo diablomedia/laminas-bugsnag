@@ -1,8 +1,8 @@
 <?php
-namespace ZfBugsnag;
+namespace LaminasBugsnag;
 
-use Zend\Mvc\ModuleRouteListener;
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\ModuleRouteListener;
+use Laminas\Mvc\MvcEvent;
 
 class Module
 {
@@ -13,7 +13,7 @@ class Module
         $services           =   $application->getServiceManager();
 
         // Check if the module is enabled
-        if(!$services->get('ZfBugsnag\Options\BugsnagOptions')->getEnabled())
+        if(!$services->get('LaminasBugsnag\Options\BugsnagOptions')->getEnabled())
             return;
 
         $service            =   $services->get('BugsnagServiceException');
@@ -37,7 +37,7 @@ class Module
     public function getAutoloaderConfig()
     {
         return [
-            'Zend\Loader\StandardAutoloader' => [
+            'Laminas\Loader\StandardAutoloader' => [
                 'namespaces' => [
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
                 ],
@@ -50,8 +50,8 @@ class Module
         return [
             'factories' => [
                 'BugsnagServiceException' =>  function($sm) {
-                    $options = $sm->get('ZfBugsnag\Options\BugsnagOptions');
-                    $service = new \ZfBugsnag\Service\BugsnagService($options);
+                    $options = $sm->get('LaminasBugsnag\Options\BugsnagOptions');
+                    $service = new \LaminasBugsnag\Service\BugsnagService($options);
                     return $service;
                 },
             ],

@@ -1,18 +1,19 @@
 {
-    "name": "nickurt/zf-bugsnag",
-    "description": "ZfBugsnag",
+    "name": "itakademy/lainas-bugsnag",
+    "description": "Bugsnag Notifier for Laminas",
     "license": "MIT",
     "keywords": [
-        "ZfBugsnag",
-        "bugsnag"
+        "Laminas",
+        "Error Handling",
+        "Bugsnag"
     ],
     "require": {
-        "php": ">=5.5.0",
-        "bugsnag/bugsnag": "2.*"
+        "php": "^5.6 || ^7.0",
+        "bugsnag/bugsnag": "3.*"
     },
     "autoload": {
         "psr-0": {
-            "ZfBugsnag": "src/"
+            "LaminasBugsnag": "src/"
         },
         "classmap": [
             "./Module.php"

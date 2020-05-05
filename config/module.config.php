@@ -2,12 +2,12 @@
 return [
     'controllers' => [
         'invokables' => [
-            'ZfBugsnag\Service\Bugsnag' => 'ZfBugsnag\Service\BugsnagService',
+            'LaminasBugsnag\Service\Bugsnag' => 'LaminasBugsnag\Service\BugsnagService',
         ],
     ],
     'service_manager' => [
         'factories' => [
-            'ZfBugsnag\Options\BugsnagOptions' => 'ZfBugsnag\Options\BugsnagOptionsFactory',
+            'LaminasBugsnag\Options\BugsnagOptions' => 'LaminasBugsnag\Options\BugsnagOptionsFactory',
         ],
     ],
 ];

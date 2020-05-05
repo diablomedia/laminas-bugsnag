@@ -1,6 +1,6 @@
 <?php
 
-namespace ZfBugsnag;
+namespace LaminasBugsnag;
 
 /**
  * Version

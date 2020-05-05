@@ -1,5 +1,5 @@
 <?php
-namespace ZfBugsnag\Service;
+namespace LaminasBugsnag\Service;
 
 use \Bugsnag;
 
@@ -14,9 +14,9 @@ class BugsnagService
      * __construct
      * Send the options of the Bugsnag
      *
-     * @param Object \ZfBugsnag\Options\BugsnagOptions
+     * @param Object \LaminasBugsnag\Options\BugsnagOptions
      */
-    public function __construct(\ZfBugsnag\Options\BugsnagOptions $options)
+    public function __construct(\LaminasBugsnag\Options\BugsnagOptions $options)
     {
         $this->options = $options;
 
@@ -27,9 +27,9 @@ class BugsnagService
             $this->bugsnag->setNotifyReleaseStages($this->options->getNotifyReleaseStages());
             $this->bugsnag->setBeforeNotifyFunction([$this, 'beforeNotify']);
             $this->bugsnag->setNotifier([
-                'name'    =>    'ZfBugsnag',
-                'version' =>    \ZfBugsnag\Version::VERSION,
-                'url'     =>    'https://github.com/nickurt/zf-bugsnag'
+                'name'    =>    'LaminasBugsnag',
+                'version' =>    \LaminasBugsnag\Version::VERSION,
+                'url'     =>    'https://github.com/itakademy/laminas-bugsnag'
             ]);
             if($this->options->getAppVersion())
             {

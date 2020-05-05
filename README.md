@@ -26,7 +26,7 @@ composer require itakademy/laminas-bugsnag
 
 ### Requirements
 
-* PHP7.2+
+* PHP5.6+ or PHP7.0+
 * [Laminas](https://getlaminas.org/)
 * [Bugsnag PHP-API](https://github.com/bugsnag/bugsnag-php)
 
@@ -38,7 +38,7 @@ Enable it in your  `./config/modules.config.php` file
 
 // modules.config.php
 return [
-    'ZfBugsnag', // Must be added as the first module
+    'LaminasBugsnag', // Must be added as the first module
 
     // ...
 ];
@@ -46,5 +46,4 @@ return [
 
 ### Configuration
 
-Copy the `./vendor/itakademy/laminas-bugsnag/config/zfbugsnag.local.php.dist` file to `./config/autoload/zfbugsnag.local.php`  and customize the settings (IsEnabled/ApiKey).
-
+Copy the `./vendor/itakademy/laminas-bugsnag/config/laminasbugsnag.local.php.dist` file to `./config/autoload/laminasbugsnag.local.php`  and customize the settings (IsEnabled, ApiKey, ...).
