@@ -13,10 +13,6 @@ class BugsnagOptions extends AbstractOptions
 
     protected $notifyReleaseStages;
 
-    protected $autoNotify;
-
-    protected $sendEnvironment;
-
     protected $appVersion;
 
     /**
@@ -53,24 +49,6 @@ class BugsnagOptions extends AbstractOptions
     public function setNotifyReleaseStages($stages)
     {
         $this->notifyReleaseStages = $stages;
-    }
-
-    /**
-     * setAutoNotify
-     * @param Boolean $autoNotify
-     */
-    public function setAutoNotify($autoNotify)
-    {
-        $this->autoNotify = (bool) $autoNotify;
-    }
-
-    /**
-     * setSendEnvironment
-     * @param Boolean $sendEnvironment
-     */
-    public function setSendEnvironment($sendEnvironment)
-    {
-        $this->sendEnvironment = (bool) $sendEnvironment;
     }
 
     /**
@@ -116,24 +94,6 @@ class BugsnagOptions extends AbstractOptions
     public function getNotifyReleaseStages()
     {
         return $this->notifyReleaseStages;
-    }
-
-    /**
-     * getAutoNotify
-     * @return Boolean $autoNotify
-     */
-    public function getAutoNotify()
-    {
-        return $this->autoNotify;
-    }
-
-    /**
-     * getSendEnvironment
-     * @return Boolean $sendEnvironment
-     */
-    public function getSendEnvironment()
-    {
-        return $this->sendEnvironment;
     }
 
     /**

@@ -22,10 +22,14 @@ class BugsnagService
 
         if($this->options->getEnabled())
         {
-            $this->bugsnag        = new \Bugsnag_Client($this->options->getApiKey());
+            $this->bugsnag        = \Bugsnag\Client::make($this->options->getApiKey());
+
+            \Bugsnag\Handler::registerWithPrevious($this->bugsnag);
+
             $this->bugsnag->setReleaseStage($this->options->getReleaseStage());
             $this->bugsnag->setNotifyReleaseStages($this->options->getNotifyReleaseStages());
-            $this->bugsnag->setBeforeNotifyFunction([$this, 'beforeNotify']);
+            $this->bugsnag->setErrorReportingLevel(E_ALL & ~E_NOTICE);
+            $this->bugsnag->setAppType('Webapp');
             $this->bugsnag->setNotifier([
                 'name'    =>    'LaminasBugsnag',
                 'version' =>    \LaminasBugsnag\Version::VERSION,
@@ -35,8 +39,6 @@ class BugsnagService
             {
                 $this->bugsnag->setAppVersion($this->options->getAppVersion());
             }
-            $this->bugsnag->setAutoNotify($this->options->getAutoNotify());
-            $this->bugsnag->setSendEnvironment($this->options->getSendEnvironment());
         }
     }
 
@@ -96,24 +98,6 @@ class BugsnagService
         return $result;
     }
 
-    /**
-     * beforeNotify
-     * This method is called before notifying Bugsnag and will remove a stack frame if that frame
-     * matches this class' error/exception handling methods. This makes sure the errors get grouped
-     * better in the BugSnag UI, otherwise they'll all get grouped under either the exception handler
-     * or the error handler, depending on which one sent it.
-     *
-     * @param object \Bugsnag_Error $error The Bugsnag_Error object that BugSnag will pass in
-     */
-    public function beforeNotify(\Bugsnag_Error $error)
-    {
-        $firstFrame = $error->stacktrace->frames[0];
-
-        if($firstFrame && ($firstFrame['method'] === get_class() . '::errorHandler' || $firstFrame['method'] === get_class() . '::exceptionHandler'))
-        {
-            array_splice($error->stacktrace->frames, 0, 1);
-        }
-    }
 
     /**
      * sendException

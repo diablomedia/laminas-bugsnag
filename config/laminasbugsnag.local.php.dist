@@ -1,9 +1,9 @@
 <?php
 return [
-	'zf-bugsnag' => [
+	'laminas-bugsnag' => [
 		/**
 		 * Enabled
-		 * is the ZfBugsnag Application enabled?
+		 * is the LaminasBugsnag Application enabled?
 		 * Default: true
 		 */
 		'enabled' => true,
@@ -27,21 +27,6 @@ return [
 		 * Default: ['development', 'production']
 		 */
 		'notifyReleaseStages' => ['development', 'production'],
-
-		/**
-		 * sendEnvironment
-		 * Bugsnag can diagnose your $_ENV environment to help fixing your issues.
-		 * This can contain private/sensitive information, so be carefull when you enabled this
-		 * Default: false
-		 */
-		'sendEnvironment' => false,
-
-		/**
-		 * autoNotify
-		 * The ZfBugsnag will notify Bugsnag of any uncaught exception (if possible)
-		 * Default: true
-		 */
-		'autoNotify' => true,
 
 		/**
 		 * appVersion
