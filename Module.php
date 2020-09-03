@@ -3,29 +3,32 @@ namespace LaminasBugsnag;
 
 use Laminas\Mvc\ModuleRouteListener;
 use Laminas\Mvc\MvcEvent;
+use \Bugsnag\Handler;
+use \Bugsnag\Client;
 
 class Module
 {
     public function onBootstrap(MvcEvent $e)
     {
-        $application        =   $e->getTarget();
-        $eventManager       =   $application->getEventManager();
-        $services           =   $application->getServiceManager();
-
+        $application = $e->getTarget();
+        $eventManager= $application->getEventManager();
+        $serviceManager = $application->getServiceManager();
+        $bugsnagConfig = $serviceManager->get('LaminasBugsnag\Options\BugsnagOptions');
         // Check if the module is enabled
-        if(!$services->get('LaminasBugsnag\Options\BugsnagOptions')->getEnabled())
+        if(!$bugsnagConfig->getEnabled())
             return;
 
-        $service            =   $services->get('BugsnagServiceException');
-        // Register the PHP exception and error handlers
-        $service->setupErrorHandlers();
+        $bugsnagClient = Client::make($bugsnagConfig->getApiKey());
+        $bugsnagClient->startSession();
 
-        $eventManager->attach(MvcEvent::EVENT_DISPATCH_ERROR, function ($event) use ($services, $service) {
-            $exception      =   $event->getParam('exception');
-            // No exception, stop the script
-            if (!$exception) return;
-
-            $service->sendException($exception);
+        $eventManager->attach(MvcEvent::EVENT_DISPATCH_ERROR, function ($event) use ($bugsnagClient) {
+            $exception = $event->getParam('exception');
+                // No exception, stop the script
+                if (!$exception) return;
+                // Reports unhandled exceptions
+                Handler::registerWithPrevious($bugsnagClient);
+                // Reports handled exceptions
+                $bugsnagClient->notifyException($exception);
         });
     }
 
