@@ -24,7 +24,7 @@ composer require diablomedia/laminas-bugsnag
 
 * PHP 7.4.0 to 8.1.x
 * [Laminas](https://getlaminas.org/)
-* [Bugsnag PHP-API](https://github.com/bugsnag/bugsnag-php) (version 3.2.31 minimum)
+* [Bugsnag PHP-API](https://github.com/bugsnag/bugsnag-php) (version 3.23.1 minimum)
 
 ### Post Installation
 
