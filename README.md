@@ -2,29 +2,29 @@
 
 ## [Bugsnag](https://bugsnag.com) Notifier for [Laminas Framework](https://getlaminas.org/)
 
-**This package is a fork of [nickurt/zf-bugsnag](https://github.com/nickurt/zf-bugsnag), which seemed to be inactive for some time. This is a port for [Laminas](https://getlaminas.org/) project. Thank's to [Nickurt](https://github.com/nickurt/) for his job.**
+**This package is a fork of [itakademy/laminas-bugsnag](https://github.com/itakademy/laminas-bugsnag) which is a fork of [nickurt/zf-bugsnag](https://github.com/nickurt/zf-bugsnag). We forked it to our own organization to remove older compatibility that makes it easier to update dependencies and code. Thanks to both of these projects for the foundation work.**
 
 ### Bugsnag?
 The [Bugsnag](https://bugsnag.com) Notifier for [Laminas Framework](https://getlaminas.org/) gives you instant notifications of the errors in your application. You can create a free plan/account on the [bugsnag](https://bugsnag.com) website.
 
 ### Install
-#### Installation with the composer
+#### Installation with composer
 
 ```shell
-php composer.phar require itakademy/laminas-bugsnag
+php composer.phar require diablomedia/laminas-bugsnag
 ```
 
 or with global composer install :
 
 ```shell
-composer require itakademy/laminas-bugsnag
+composer require diablomedia/laminas-bugsnag
 ```
 
 ### Requirements
 
-* PHP5.6+ or PHP7.0+
+* PHP 7.4.0 to 8.1.x
 * [Laminas](https://getlaminas.org/)
-* [Bugsnag PHP-API](https://github.com/bugsnag/bugsnag-php)
+* [Bugsnag PHP-API](https://github.com/bugsnag/bugsnag-php) (version 3.2.31 minimum)
 
 ### Post Installation
 
@@ -42,4 +42,4 @@ return [
 
 ### Configuration
 
-Copy the `./vendor/itakademy/laminas-bugsnag/config/laminasbugsnag.local.php.dist` file to `./config/autoload/laminasbugsnag.local.php`  and customize the settings (IsEnabled, ApiKey, ...).
+Copy the `./vendor/diablomedia/laminas-bugsnag/config/laminasbugsnag.local.php.dist` file to `./config/autoload/laminasbugsnag.local.php`  and customize the settings (IsEnabled, ApiKey, ...).
