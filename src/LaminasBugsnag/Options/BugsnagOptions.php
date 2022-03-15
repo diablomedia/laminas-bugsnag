@@ -5,142 +5,86 @@ use Laminas\Stdlib\AbstractOptions;
 
 class BugsnagOptions extends AbstractOptions
 {
-    protected $apiKey;
+    protected string $apiKey;
 
-    protected $isEnabled;
+    protected bool $isEnabled;
 
-    protected $releaseStage;
+    protected string $releaseStage;
 
-    protected $notifyReleaseStages;
+    protected array $notifyReleaseStages;
 
-    protected $autoNotify;
+    protected bool $autoNotify;
 
-    protected $sendEnvironment;
+    protected bool $sendEnvironment;
 
-    protected $appVersion;
+    protected string $appVersion;
 
-    /**
-     * setApiKey
-     * @param String $apiKey
-     */
-    public function setApiKey($apiKey)
+    public function setApiKey(string $apiKey): void
     {
         $this->apiKey = $apiKey;
     }
 
-    /**
-     * setEnable
-     * @param Boolean $isEnabled
-     */
-    public function setEnabled($isEnabled)
+    public function setEnabled(bool $isEnabled): void
     {
         $this->isEnabled = $isEnabled;
     }
 
-    /**
-     * setReleaseStage
-     * @param String $releaseStage
-     */
-    public function setReleaseStage($releaseStage)
+    public function setReleaseStage(string $releaseStage): void
     {
         $this->releaseStage = $releaseStage;
     }
 
-    /**
-     * setNotifyReleaseStages
-     * @param Array $stages
-     */
-    public function setNotifyReleaseStages($stages)
+    public function setNotifyReleaseStages(array $stages): void
     {
         $this->notifyReleaseStages = $stages;
     }
 
-    /**
-     * setAutoNotify
-     * @param Boolean $autoNotify
-     */
-    public function setAutoNotify($autoNotify)
+    public function setAutoNotify(bool $autoNotify): void
     {
-        $this->autoNotify = (bool) $autoNotify;
+        $this->autoNotify = $autoNotify;
     }
 
-    /**
-     * setSendEnvironment
-     * @param Boolean $sendEnvironment
-     */
-    public function setSendEnvironment($sendEnvironment)
+    public function setSendEnvironment(bool $sendEnvironment): void
     {
-        $this->sendEnvironment = (bool) $sendEnvironment;
+        $this->sendEnvironment = $sendEnvironment;
     }
 
-    /**
-     * setAppVersion
-     * @param String $appVersion
-     */
-    public function setAppVersion($appVersion)
+    public function setAppVersion(string $appVersion): void
     {
         $this->appVersion = $appVersion;
     }
 
-    /**
-     * getApiKey
-     * @return String $apiKey
-     */
-    public function getApiKey()
+    public function getApiKey(): string
     {
         return $this->apiKey;
     }
 
-    /**
-     * getEnabled
-     * @return Boolean $isEnabled
-     */
-    public function getEnabled()
+    public function getEnabled(): bool
     {
         return $this->isEnabled;
     }
 
-    /**
-     * getReleaseStage
-     * @return String $releaseStage
-     */
-    public function getReleaseStage()
+    public function getReleaseStage(): string
     {
         return $this->releaseStage;
     }
 
-    /**
-     * getNotifyReleaseStages
-     * @return Array $stages
-     */
-    public function getNotifyReleaseStages()
+    public function getNotifyReleaseStages(): array
     {
         return $this->notifyReleaseStages;
     }
 
-    /**
-     * getAutoNotify
-     * @return Boolean $autoNotify
-     */
-    public function getAutoNotify()
+    public function getAutoNotify(): bool
     {
         return $this->autoNotify;
     }
 
-    /**
-     * getSendEnvironment
-     * @return Boolean $sendEnvironment
-     */
-    public function getSendEnvironment()
+    public function getSendEnvironment(): bool
     {
         return $this->sendEnvironment;
     }
 
-    /**
-     * getAppVersion
-     * @return String $appVersion
-     */
-    public function getAppVersion()
+    public function getAppVersion(): string
     {
         return $this->appVersion;
     }
