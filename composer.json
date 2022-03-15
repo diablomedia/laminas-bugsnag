@@ -16,12 +16,9 @@
         "psr/container": "^1.0.0"
     },
     "autoload": {
-        "psr-0": {
-            "LaminasBugsnag": "src/"
-        },
-        "classmap": [
-            "./Module.php"
-        ]
+        "psr-4": {
+            "LaminasBugsnag\\": "src/"
+        }
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.7",

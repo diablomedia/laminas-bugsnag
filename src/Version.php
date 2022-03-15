@@ -7,5 +7,5 @@ namespace LaminasBugsnag;
  */
 class Version
 {
-    const VERSION = '1.1.3';
+    const VERSION = '2.0.0';
 }

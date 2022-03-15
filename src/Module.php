@@ -1,4 +1,5 @@
 <?php
+
 namespace LaminasBugsnag;
 
 use Laminas\Mvc\MvcEvent;
@@ -12,7 +13,9 @@ class Module
         $application = $e->getTarget();
         $eventManager= $application->getEventManager();
         $serviceManager = $application->getServiceManager();
-        $bugsnagService = $serviceManager->get('LaminasBugsnag\Service\Bugsnag');
+
+        /** @var Service\BugsnagService $bugsnagService */
+        $bugsnagService = $serviceManager->get('BugsnagServiceException');
 
         $bugsnagClient = $bugsnagService->getClient();
         $bugsnagClient->startSession();
@@ -35,17 +38,6 @@ class Module
         return include __DIR__ . '/config/module.config.php';
     }
 
-    public function getAutoloaderConfig(): array
-    {
-        return [
-            'Laminas\Loader\StandardAutoloader' => [
-                'namespaces' => [
-                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
-                ],
-            ],
-        ];
-    }
-
     public function getServiceConfig(): array
     {
         return [
@@ -53,6 +45,7 @@ class Module
                 'BugsnagServiceException' =>  function ($sm) {
                     $options = $sm->get('LaminasBugsnag\Options\BugsnagOptions');
                     $service = new \LaminasBugsnag\Service\BugsnagService($options);
+
                     return $service;
                 },
             ],
