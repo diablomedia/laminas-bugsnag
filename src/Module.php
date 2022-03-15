@@ -14,23 +14,26 @@ class Module
         $eventManager= $application->getEventManager();
         $serviceManager = $application->getServiceManager();
 
+
         /** @var Service\BugsnagService $bugsnagService */
         $bugsnagService = $serviceManager->get('BugsnagServiceException');
-
         $bugsnagClient = $bugsnagService->getClient();
-        $bugsnagClient->startSession();
 
-        $eventManager->attach(MvcEvent::EVENT_DISPATCH_ERROR, function ($event) use ($bugsnagClient) {
-            $exception = $event->getParam('exception');
+        if ($bugsnagClient) {
+            $bugsnagClient->startSession();
 
-            // No exception, stop the script
-            if (!$exception) {
-                return;
-            }
+            $eventManager->attach(MvcEvent::EVENT_DISPATCH_ERROR, function ($event) use ($bugsnagClient) {
+                $exception = $event->getParam('exception');
 
-            // Reports handled exceptions
-            $bugsnagClient->notifyException($exception);
-        });
+                // No exception, stop the script
+                if (!$exception) {
+                    return;
+                }
+
+                // Reports handled exceptions
+                $bugsnagClient->notifyException($exception);
+            });
+        }
     }
 
     public function getConfig(): array

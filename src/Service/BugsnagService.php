@@ -56,8 +56,12 @@ class BugsnagService
         }
     }
 
-    public function getClient(): Client
+    public function getClient(): ?Client
     {
-        return $this->bugsnag;
+        if ($this->options->getEnabled()) {
+            return $this->bugsnag;
+        }
+
+        return null;
     }
 }
