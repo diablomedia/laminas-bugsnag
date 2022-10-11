@@ -1123,16 +1123,16 @@
         },
         {
             "name": "laminas/laminas-servicemanager",
-            "version": "3.18.0",
+            "version": "3.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-servicemanager.git",
-                "reference": "5d786a07bb4bad2a7a7c5f8255197766e6d526e2"
+                "reference": "ed160729bb8721127efdaac799f9a298963345b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-servicemanager/zipball/5d786a07bb4bad2a7a7c5f8255197766e6d526e2",
-                "reference": "5d786a07bb4bad2a7a7c5f8255197766e6d526e2",
+                "url": "https://api.github.com/repos/laminas/laminas-servicemanager/zipball/ed160729bb8721127efdaac799f9a298963345b1",
+                "reference": "ed160729bb8721127efdaac799f9a298963345b1",
                 "shasum": ""
             },
             "require": {
@@ -1209,7 +1209,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2022-10-10T14:30:35+00:00"
+            "time": "2022-10-10T20:59:22+00:00"
         },
         {
             "name": "laminas/laminas-stdlib",
