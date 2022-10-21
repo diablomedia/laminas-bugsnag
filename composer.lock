@@ -979,16 +979,16 @@
         },
         {
             "name": "laminas/laminas-mvc",
-            "version": "3.4.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-mvc.git",
-                "reference": "4ccca214621659fe75b748b377d5ba6a313a878b"
+                "reference": "111e08a9c27274af570260c83abe77204ccf3366"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-mvc/zipball/4ccca214621659fe75b748b377d5ba6a313a878b",
-                "reference": "4ccca214621659fe75b748b377d5ba6a313a878b",
+                "url": "https://api.github.com/repos/laminas/laminas-mvc/zipball/111e08a9c27274af570260c83abe77204ccf3366",
+                "reference": "111e08a9c27274af570260c83abe77204ccf3366",
                 "shasum": ""
             },
             "require": {
@@ -1058,7 +1058,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2022-10-19T15:52:09+00:00"
+            "time": "2022-10-21T14:19:57+00:00"
         },
         {
             "name": "laminas/laminas-router",
