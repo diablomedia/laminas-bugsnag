@@ -3,6 +3,9 @@ namespace LaminasBugsnag\Options;
 
 use Laminas\Stdlib\AbstractOptions;
 
+/**
+ * @extends AbstractOptions<BugsnagOptions>
+ */
 class BugsnagOptions extends AbstractOptions
 {
     protected string $apiKey;
@@ -18,6 +21,8 @@ class BugsnagOptions extends AbstractOptions
     protected bool $sendEnvironment;
 
     protected string $appVersion;
+
+    protected int $errorReportingLevel;
 
     public function setApiKey(string $apiKey): void
     {
@@ -54,6 +59,11 @@ class BugsnagOptions extends AbstractOptions
         $this->appVersion = $appVersion;
     }
 
+    public function setErrorReportingLevel(int $errorReportingLevel): void
+    {
+        $this->errorReportingLevel = $errorReportingLevel;
+    }
+
     public function getApiKey(): string
     {
         return $this->apiKey;
@@ -87,5 +97,10 @@ class BugsnagOptions extends AbstractOptions
     public function getAppVersion(): string
     {
         return $this->appVersion;
+    }
+
+    public function getErrorReportingLevel(): int
+    {
+        return $this->errorReportingLevel;
     }
 }
