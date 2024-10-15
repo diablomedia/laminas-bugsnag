@@ -22,7 +22,7 @@ class BugsnagOptions extends AbstractOptions
 
     protected string $appVersion;
 
-    protected int $errorReportingLevel;
+    protected ?int $errorReportingLevel = null;
 
     public function setApiKey(string $apiKey): void
     {
@@ -99,7 +99,7 @@ class BugsnagOptions extends AbstractOptions
         return $this->appVersion;
     }
 
-    public function getErrorReportingLevel(): int
+    public function getErrorReportingLevel(): ?int
     {
         return $this->errorReportingLevel;
     }

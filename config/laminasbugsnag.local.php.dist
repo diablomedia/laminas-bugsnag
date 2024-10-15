@@ -1,4 +1,5 @@
 <?php
+
 return [
 	'laminas-bugsnag' => [
 		/**
@@ -34,6 +35,15 @@ return [
 		 * useful when fixing errors so Bugsnag reports errors if they appear
 		 * in a new version of the app.
 		 */
-		'appVersion' => '1.0.0'
+		'appVersion' => '1.0.0',
+
+		/**
+		 * errorReportingLevel
+		 * The PHP error reporting levels to send to Bugsnag, see their reference:
+		 * https://docs.bugsnag.com/platforms/php/other/configuration-options/#error-reporting-level
+		 * If not specified, defaults to the result of calling PHP's error_reporting function.
+		 * Generally recommended to leave this setting the default.
+		 */
+		 // 'errorReportingLevel' => E_ALL ~ E_NOTICE,
 	],
 ];

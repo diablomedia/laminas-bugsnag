@@ -28,7 +28,7 @@ class BugsnagService
 
             $this->bugsnag->setReleaseStage($this->options->getReleaseStage());
             $this->bugsnag->setNotifyReleaseStages($this->options->getNotifyReleaseStages());
-            $this->bugsnag->setErrorReportingLevel(E_ALL & ~E_NOTICE);
+            $this->bugsnag->setErrorReportingLevel($this->options->getErrorReportingLevel() ?? error_reporting());
             $this->bugsnag->setAppType('Laminas');
             $this->bugsnag->setNotifier([
                 'name'    =>    'LaminasBugsnag',
